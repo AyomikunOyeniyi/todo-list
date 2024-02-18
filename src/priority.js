@@ -1,5 +1,7 @@
+import { getValues } from "./dialog";
+
 let todoPry;
-//check if running this in another module means it doesn't have access to todoPry
+
 function checkPriority () {
     if (getValues().pryOne.checked) {
         todoPry = getValues().pryOne.value;
