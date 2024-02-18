@@ -1,5 +1,4 @@
-import ToDo from "./todo";
-import { projects } from "./create-project";
+import { projects } from "./project";
 
 export default function makeItemCard (item) {
     const holder = document.querySelector('.content');
@@ -24,5 +23,16 @@ export default function makeItemCard (item) {
     holder.appendChild(card);
 };
 
+const holder = document.querySelector('.project-btns');
+
+function showProjectBtn (value) {
+    for (let i = 1; i <= projects.length; i++) {
+        const projectBtn = document.createElement('button');
+        projectBtn.classList.add('btn');
+        projectBtn.textContent = value;
+        holder.appendChild(projectBtn);
+    }
+};
+export {showProjectBtn, }
 
 
