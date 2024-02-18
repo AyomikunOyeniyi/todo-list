@@ -1,7 +1,8 @@
 import ToDo from "./todo";
 import "./style.css";
-import showDialog from "./create-project";
-import { getValues, checkPriority } from "./dialog";
+import showDialog from "./dialog";
+import { getValues,} from "./dialog";
+import { checkPriority } from "./priority";
 
 //functionality for the addTodo button
 const addTodoBtn = document.querySelector('.add-btn');
