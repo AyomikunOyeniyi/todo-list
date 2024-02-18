@@ -9,9 +9,20 @@ function getValues () {
     return {todoTitle, todoDsc, todoDue, pryOne, pryTwo, pryThree}
 };
 
-export default function showDialog() {
-    const dialog = document.querySelector('dialog');
+const dialog = document.querySelector('dialog');
+const form = document.querySelector('form');
+
+function showDialog() {
     dialog.showModal();
 };
 
-export {getValues,}
+function closeDialog () {
+    form.reset();
+    dialog.close();
+};
+
+function clearDialog () {
+    form.reset();
+};
+
+export {getValues, closeDialog, clearDialog, showDialog}
