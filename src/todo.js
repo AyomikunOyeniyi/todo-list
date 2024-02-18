@@ -1,6 +1,6 @@
 import { getValues,} from "./dialog";
 import { checkPriority } from "./priority";
-import { projects,} from "./create-project";
+import { projects,} from "./project";
 import makeItemCard from "./render";
 
 export default class ToDo {
