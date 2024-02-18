@@ -20,6 +20,15 @@ body {
     grid-column: 1/2;
 }
 
+.add-btn {
+    width: 1000px;
+    height: 25px;
+    display: flex;
+    justify-content: flex-start;
+    padding-left: 30px;
+    border-radius: 10px;
+}
+
 .main-btns, .project-btns {
     display: flex;
     flex-direction: column;
@@ -31,8 +40,11 @@ body {
 .project-btns {
     text-align: center;
 }
+
 .content {
-    display: grid;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
     grid-column: 2/3;
     grid-row: 2/6;
 }
