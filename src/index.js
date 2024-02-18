@@ -1,8 +1,7 @@
-import ToDo from "./todo";
+import {createTodo, renderTodo,} from "./todo";
 import "./style.css";
-import showDialog from "./dialog";
-import { getValues,} from "./dialog";
-import { checkPriority } from "./priority";
+import {showDialog, clearDialog, closeDialog} from "./dialog";
+// import { renderTodo,} from "./todo";
 
 //functionality for the addTodo button
 const addTodoBtn = document.querySelector('.add-btn');
@@ -14,7 +13,7 @@ addTodoBtn.addEventListener('click', () => {
 const submitBtn = document.querySelector('.submit-btn');
 submitBtn.addEventListener('click', (event) => {
     event.preventDefault();
-    getValues();
-    const newTodo = new ToDo(getValues().todoTitle, getValues().todoDsc, getValues().todoDue, checkPriority());
-    console.log(newTodo);
-})
+    createTodo();
+    renderTodo();
+    closeDialog();
+});
