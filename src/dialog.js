@@ -9,20 +9,20 @@ function getValues () {
     return {todoTitle, todoDsc, todoDue, pryOne, pryTwo, pryThree}
 };
 
-const dialog = document.querySelector('dialog');
-const form = document.querySelector('form');
+const todoDialog = document.querySelector('.todo-dialog');
+const todoForm = document.querySelector('.todo-form');
 
-function showDialog() {
-    dialog.showModal();
+function showTodoDialog() {
+    todoDialog.showModal();
 };
 
-function closeDialog () {
-    form.reset();
-    dialog.close();
+function closeTodoDialog () {
+    todoForm.reset();
+    todoDialog.close();
 };
 
-function clearDialog () {
-    form.reset();
+function clearTodoDialog () {
+    todoForm.reset();
 };
 
-export {getValues, closeDialog, clearDialog, showDialog}
+export {getValues, closeTodoDialog, clearTodoDialog, showTodoDialog,}
