@@ -3,16 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Get Doing</title>
     <script src="main.js" defer></script>
 </head>
 <body>
-    <header></header>
-    <div class="menu"></div>
+    <header><h1>Get Doing</h1></header>
+    <div class="menu">
+        <div class="main-btns">
+            <button class="inbox-btn btn">Inbox</button>
+            <button class="today-btn btn">Today</button>
+            <button class="week-btn btn">This week</button>
+            <button class="add-btn btn">Add Todo</button>
+        </div>
+        <div class="project-btns">
+            <h2>Projects</h2>
+            <button class="btn">Current</button>
+            <button class="pro-btn btn">Add Project</button>
+        </div>
+    </div>
+
+    <!-- dialog for add todo button -->
     <div class="content"></div>
-    <button class="add-btn">Add Todo</button>
-    <dialog>
-        <form action="" method="dialog">
+    <dialog class="todo-dialog">
+        <form action="" method="dialog" class="todo-form">
             <label for="title">Title: </label>
             <input type="text" id="title" class="item-title">
 
@@ -25,20 +38,29 @@
             <ul>
                 <li>
                     <label for="priority-1">Priority 1</label>
-                    <input type="radio" id="priority-1" name="p-1" value="one">
+                    <input type="radio" id="priority-1" name="p-1" value="1">
                 </li>
                 <li>
                     <label for="priority-2">Priority 2</label>
-                    <input type="radio" id="priority-2" name="p-2" value="two">
+                    <input type="radio" id="priority-2" name="p-2" value="2">
                 </li>
                 <li>
                     <label for="priority-3">Priority 3</label>
-                    <input type="radio" id="priority-3" name="p-3" value="three">
+                    <input type="radio" id="priority-3" name="p-3" value="3">
                 </li>
             </ul>
         </form>
         <button class="submit-btn" type="submit">Done</button>
+        <button class="close-btn">Close</button>
         <button class="clear-btn" type="reset">Clear</button>
+    </dialog>
+
+    <!-- dialog for projects -->
+    <dialog class="proj-dialog">
+        <form action="" method="dialog">
+            <label for="proj-name">Project Name:</label>
+            <input type="text" name="proj-name" id="proj-name">
+        </form>
     </dialog>
 </body>
 </html>
