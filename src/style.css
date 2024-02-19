@@ -22,11 +22,10 @@ body {
 
 .add-btn {
     width: 1000px;
-    height: 25px;
+    height: 45px;
     display: flex;
     justify-content: flex-start;
     padding-left: 30px;
-    border-radius: 10px;
 }
 
 .main-btns, .project-btns {
@@ -63,10 +62,12 @@ header {
     border: none;
     background-color: white;
     font-size: large;
+    font-weight: bold;
+    padding: 10px;
 }
 
 .btn:hover{
     background-color: #f2efe5;
-    font-weight: bold;
+    font-weight: bolder;
     font-size: larger;
 }

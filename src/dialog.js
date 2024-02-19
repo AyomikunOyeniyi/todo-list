@@ -25,4 +25,28 @@ function clearTodoDialog () {
     todoForm.reset();
 };
 
-export {getValues, closeTodoDialog, clearTodoDialog, showTodoDialog,}
+
+//for project dialog
+function getTitle () {
+    let projectTitle = document.querySelector('#proj-name').value;
+    return projectTitle;
+};
+
+const projectDialog = document.querySelector('.proj-dialog');
+const projectForm = document.querySelector('.proj-form');
+
+function showProjDialog() {
+    projectDialog.showModal();
+};
+
+function closeProjDialog() {
+    projectForm.reset();
+    projectDialog.close();
+};
+
+function clearProjDialog() {
+    projectForm.reset();
+};
+
+export {getValues, closeTodoDialog, clearTodoDialog, showTodoDialog, getTitle, 
+        showProjDialog, closeProjDialog, clearProjDialog,}

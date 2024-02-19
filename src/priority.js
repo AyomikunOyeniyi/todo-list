@@ -1,4 +1,4 @@
-import { getValues } from "./dialog";
+import { getValues, } from "./dialog";
 
 let todoPry;
 

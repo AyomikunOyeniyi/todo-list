@@ -1,6 +1,5 @@
 import { getValues,} from "./dialog";
 import { checkPriority } from "./priority";
-import { projects,} from "./project";
 import makeItemCard from "./render";
 
 export default class ToDo {
@@ -12,20 +11,19 @@ export default class ToDo {
     }
 };
 
-function createTodo () {
+function createTodo (array) {
     getValues();
     const newItem = new ToDo(getValues().todoTitle, getValues().todoDsc, getValues().todoDue, checkPriority());
-    projects[0].push(newItem);
-};
+    array.push(newItem);
 
-function renderTodo () {
-    for (let i = 0; i < projects.length; i++) {
-        for (let project in projects[i]) {
-            let item = projects[i][project];
+    function renderTodo () {
+        for (let i = 0; i < array.length; i++) {
+            let item = array[i];
             makeItemCard(item);
         }
-    }
+    };
+    renderTodo();
 };
 
 
-export {createTodo, renderTodo,}
+export {createTodo,}
