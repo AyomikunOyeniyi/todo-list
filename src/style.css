@@ -48,6 +48,11 @@ body {
     grid-row: 2/6;
 }
 
+.holder {
+    width: 1023.36px;
+    height: 180px;
+}
+
 header {
     grid-column: 1/3;
     grid-row: 1/2;
@@ -70,4 +75,15 @@ header {
     background-color: #f2efe5;
     font-weight: bolder;
     font-size: larger;
+}
+
+.card{
+    width: 1000px;
+    display: flex;
+    gap: 200px;
+}
+
+.holder {
+    display: flex;
+    flex-direction: column;
 }

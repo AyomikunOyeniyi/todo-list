@@ -16,10 +16,11 @@ currentBtn.addEventListener('click', () => {
 //functionality for add project button
 
 //functionality for the todo dialog buttons
+let project = [];
+
 const submitBtn = document.querySelector('.submit-btn');
 submitBtn.addEventListener('click', (event) => {
     event.preventDefault();
-    let project = [];
     createTodo(project);
     closeTodoDialog();
 });
