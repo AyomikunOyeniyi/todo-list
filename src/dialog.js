@@ -9,6 +9,17 @@ function getValues () {
     return {todoTitle, todoDsc, todoDue, pryOne, pryTwo, pryThree}
 };
 
+function getPtValues () {
+    const todoTitle = document.querySelector('#p-title').value;
+    const todoDsc = document.querySelector('#p-description').value;
+    const todoDue = document.querySelector('#p-due').value;
+    const pryOne = document.querySelector('#p-priority-1');
+    const pryTwo = document.querySelector('#p-priority-2');
+    const pryThree = document.querySelector('#p-priority-3');
+
+    return {todoTitle, todoDsc, todoDue, pryOne, pryTwo, pryThree}
+}
+
 const todoDialog = document.querySelector('.todo-dialog');
 const todoForm = document.querySelector('.todo-form');
 
@@ -25,6 +36,21 @@ function clearTodoDialog () {
     todoForm.reset();
 };
 
+const projTodoDialog = document.querySelector('.pt-dialog');
+const projTodoForm = document.querySelector('.pt-form');
+
+function showProjTodoDialog () {
+    projTodoDialog.showModal();
+};
+
+function closeProjTodoDialog () {
+    projTodoForm.reset();
+    projTodoDialog.close();
+};
+
+function clearProjTodoDialog () {
+    projTodoForm.reset();
+};
 
 //for project dialog
 function getTitle () {
@@ -49,4 +75,4 @@ function clearProjDialog() {
 };
 
 export {getValues, closeTodoDialog, clearTodoDialog, showTodoDialog, getTitle, 
-        showProjDialog, closeProjDialog, clearProjDialog,}
+        showProjDialog, closeProjDialog, clearProjDialog, getPtValues, showProjTodoDialog, closeProjTodoDialog, clearProjTodoDialog,}

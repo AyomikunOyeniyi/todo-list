@@ -1,33 +1,9 @@
 // import { projects } from "./project";
-import { showTodoDialog } from "./dialog";
+import { showTodoDialog, showProjTodoDialog } from "./dialog";
 import { addProBtn } from ".";
 
 const addTodoBtn = document.createElement('button');
-
-// export default function makeItemCard (item, i) {
-
-//     const holder = document.querySelector('.holder');
-
-//     const card = document.createElement('div');
-//     const cardHeader = document.createElement('h3');
-//     cardHeader.textContent = `${item.title}`;
-//     card.appendChild(cardHeader);
-
-//     const cardText = document.createElement('p');
-//     cardText.textContent = `${item.description}`;
-//     card.appendChild(cardText);
-
-//     const cardDate = document.createElement('p');
-//     cardDate.textContent = `${item.due}`;
-//     card.appendChild(cardDate);
-
-//     const cardPriority = document.createElement('p');
-//     cardPriority.textContent = `${item.priority}`;
-//     card.appendChild(cardPriority);
-//     card.classList.add('card');
-//     card.classList.add(`card-${i}`);
-//     holder.insertBefore(card, addTodoBtn);
-// };
+const addProjTodoBtn = document.createElement('button');
 
 const proHolder = document.querySelector('.project-btns');
 
@@ -56,6 +32,18 @@ function showButton () {
     holder.appendChild(addTodoBtn);
 };
 
+function showProjAddTodo () {
+    const holder = document.querySelector('.holder');
+    addProjTodoBtn.textContent = 'Add Todo';
+    addProjTodoBtn.classList.add('btn');
+    addProjTodoBtn.classList.add('add-btn');
+
+    addProjTodoBtn.addEventListener('click', () => {
+        showProjTodoDialog();
+    });
+
+    holder.appendChild(addProjTodoBtn);
+};
 //function to render inbox content
 function renderInbox () {
     const heading = document.querySelector('.heading');
@@ -76,7 +64,7 @@ function renderProject (name) {
     holder.textContent = '';
     title.textContent = `${name}`;
     heading.appendChild(title);
-    showButton();
+    showProjAddTodo();
 };
 
 export {showProjectBtn, renderInbox, renderProject, showButton, addTodoBtn,}

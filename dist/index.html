@@ -27,7 +27,7 @@
         <div class="heading"></div>
         <div class="holder"></div>
     </div>
-    <!-- dialog for add todo button -->
+    <!-- dialog for inbox add todo button -->
     <dialog class="todo-dialog">
         <form action="" method="dialog" class="todo-form">
             <label for="title">Title: </label>
@@ -68,6 +68,38 @@
         <button class="psubmit-btn" type="submit">Done</button>
         <button class="pclose-btn">Close</button>
         <button class="pclear-btn" type="reset">Clear</button>
+    </dialog>
+
+    <!-- dialog for project add todo buttons -->
+    <dialog class="pt-dialog">
+        <form action="" method="dialog" class="pt-form">
+            <label for="title">Title: </label>
+            <input type="text" id="p-title" class="item-title">
+
+            <label for="description">Description: </label>
+            <input type="text" id="p-description" class="description">
+
+            <label for="due-date">Due date: </label>
+            <input type="date" id="p-due" class="due-date">
+
+            <ul>
+                <li>
+                    <label for="priority-1">Priority 1</label>
+                    <input type="radio" id="p-priority-1" name="p-1" value="1">
+                </li>
+                <li>
+                    <label for="priority-2">Priority 2</label>
+                    <input type="radio" id="p-priority-2" name="p-2" value="2">
+                </li>
+                <li>
+                    <label for="priority-3">Priority 3</label>
+                    <input type="radio" id="p-priority-3" name="p-3" value="3">
+                </li>
+            </ul>
+        </form>
+        <button class="p-submit-btn" type="submit">Done</button>
+        <button class="p-close-btn">Close</button>
+        <button class="p-clear-btn" type="reset">Clear</button>
     </dialog>
 </body>
 </html>

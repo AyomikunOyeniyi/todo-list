@@ -1,7 +1,8 @@
 import {createTodo,} from "./todo";
 import "./style.css";
-import {showTodoDialog, clearTodoDialog, closeTodoDialog, getTitle, showProjDialog, closeProjDialog, clearProjDialog, } from "./dialog";
+import {showTodoDialog, clearTodoDialog, closeTodoDialog, getTitle, showProjDialog, closeProjDialog, clearProjDialog, closeProjTodoDialog} from "./dialog";
 import { showProjectBtn, renderInbox, renderProject, } from "./render";
+import  Project  from "./project";
 
 //functionality for the inbox button
 const inboxBtn = document.querySelector('.inbox-btn');
@@ -13,15 +14,18 @@ const currentBtn = document.querySelector('.current-btn');
 currentBtn.addEventListener('click', () => {
     renderProject('Current');
 })
-//functionality for add project button
 
 //functionality for the todo dialog buttons
-let project = [];
+let inbox = [];
+let current = [];
+
+// let mainProjects = [];
 
 const submitBtn = document.querySelector('.submit-btn');
 submitBtn.addEventListener('click', (event) => {
     event.preventDefault();
-    createTodo(project);
+    createTodo(inbox);
+    console.log(inbox);
     closeTodoDialog();
 });
 
@@ -36,14 +40,32 @@ clearBtn.addEventListener('click', () => {
 });
 
 //functionality for the project dialog buttons
+function createProject(arg) {
+    const newProject = new Project(arg);
+    const projectArray = newProject.getProject();
+    projectArray == []
+    // mainProjects.push(projectArray);
+
+    return {projectArray,}
+};
+
+const proTodoSubmitBtn = document.querySelector('.p-submit-btn');
+proTodoSubmitBtn.addEventListener('click', (event) => {
+    event.preventDefault();
+    createTodo(createProject(arg).projectArray);
+    closeProjTodoDialog();
+});
+
+
 const proSubmitBtn = document.querySelector('.psubmit-btn');
 proSubmitBtn.addEventListener('click', (event) => {
     event.preventDefault();
     getTitle();
+    createProject(getTitle());
     showProjectBtn(getTitle());
     closeProjDialog();
 });
-
+ 
 const addProBtn = document.querySelector('.pro-btn');
 addProBtn.addEventListener('click', () => {
     showProjDialog();
